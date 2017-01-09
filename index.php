@@ -60,7 +60,7 @@ if (isset($_GET ["base_amount"])) {
 	if (mysqli_query ($conn, $sql)){
 		echo "saved in db";
 	}else{
-		echo "Error:" . $sql . "<br>" .	mysqli_error($conn);
+		echo "Errors:" . $sql . "<br>" .	mysqli_error($conn);
 	}
 	mysqli_close($conn);
 }
