@@ -17,3 +17,9 @@ STEPS:
 -go to github and click "CLONE/DOWNLOAD" -> copy the result
 -go to cd/xammp/htdocs > git clone (copy the result)
 -go to cd/xammp/htdocs/your project>git fetch origin inorder to copy all the branch
+
+2)DELETE REMOTE BRANCH
+-git push origin : <branch>
+
+3)DELETE LOCAL BRANCH
+-git branch - d <branch>
