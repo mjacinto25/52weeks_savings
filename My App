@@ -4,3 +4,15 @@ My App Specifications:
 3)Select week (automatic)
 4)Expected total per month
 5)Actual total per month
+
+
+
+
+STEPS:
+1)CLONING REPO
+-add first new SSH key.
+ -git gui -> HELP -> generate SSH -> copy clipboard -> go to github
+ -> settings -> ssh -> add new
+-go to github and click "CLONE/DOWNLOAD" -> copy the result
+-go to cd/xammp/htdocs > git clone (copy the result)
+-go to cd/xammp/htdocs/your project>git fetch origin inorder to copy all the branch
