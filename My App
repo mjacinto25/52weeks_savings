@@ -4,3 +4,22 @@ My App Specifications:
 3)Select week (automatic)
 4)Expected total per month
 5)Actual total per month
+
+
+
+Reference: https://github.com/GarageGames/Torque2D/wiki/Cloning-the-repo-and-working-with-Git#2--cloning-the-repo
+
+STEPS:
+1)CLONING REPO
+-add first new SSH key.
+ -git gui -> HELP -> generate SSH -> copy clipboard -> go to github
+ -> settings -> ssh -> add new
+-go to github and click "CLONE/DOWNLOAD" -> copy the result
+-go to cd/xammp/htdocs > git clone (copy the result)
+-go to cd/xammp/htdocs/your project>git fetch origin inorder to copy all the branch
+
+2)DELETE REMOTE BRANCH
+-git push origin : <branch>
+
+3)DELETE LOCAL BRANCH
+-git branch - d <branch>
