@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<form action = "index.php" method = "get">
+<form action = "index.php" method = "post">
 Set Base Amount: <input type="number" name = "base_amount">
 <input type = "submit">
 
@@ -14,8 +14,8 @@ Set Base Amount: <input type="number" name = "base_amount">
 </tr> 
 
 <?php
-if (isset($_GET ["base_amount"])) {
-	$base_amount = $_GET ["base_amount"];
+if (isset($_POST ["base_amount"])) {
+	$base_amount = $_POST ["base_amount"];
 	$reference_amount = $base_amount; 
 	for ($i = 1 ; $i <= 52; $i++){
 	?>
@@ -45,7 +45,7 @@ $username = "root";
 $password = "";
 $dbname = "52weeks_savings";
 
-if (isset($_GET ["base_amount"])) {
+if (isset($_POST ["base_amount"])) {
 	//Create Connection
 	$conn = new mysqli($servername,$username,$password,$dbname);
 
@@ -59,29 +59,28 @@ if (isset($_GET ["base_amount"])) {
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0){
-		while ($row=$result->fetch_assoc()){
-			echo "-amount" . $row["amount"]. "<br>";
+		/*while ($row=$result->fetch_assoc()){
+		echo "-amount" . $row["amount"]. "<br>";
+	    }*/
+	$sql = "UPDATE base_amount SET amount = (".$base_amount.")";
+	$result = $conn->query($sql);
 
-		}
 	}else {
-			echo "0";
-	 }
+	$sql = "INSERT INTO base_amount (amount) VALUES (".$base_amount.")";
+	$result = $conn->query($sql);
+	}
 	
-	 $sql = "INSERT INTO base_amount (amount) VALUES (".$base_amount.")";
-	
-
-
 	/*if (("SELECT amount FROM base_amount") == NULL){
 	$sql = "INSERT INTO base_amount (amount) VALUES (".$base_amount.")";
 	} else {
 	$sql = "UPDATE base_amount 
 	SET amount = (".$base_amount.")";
 	}*/
-	if (mysqli_query ($conn, $sql)){
+	/*if (mysqli_query ($conn, $sql)){
 		echo "saved in db";
 	}else{
 		echo "Errors:" . $sql . "<br>" .	mysqli_error($conn);
-	}
+	}*/
 
 	mysqli_close($conn);
 }
