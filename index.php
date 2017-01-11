@@ -53,15 +53,36 @@ if (isset($_GET ["base_amount"])) {
 	if ($conn->connect_error){
 		die ("Connection Failed:" . $conn->connect_error);
 	}
-	//echo "Conne";
+	//echo "Connect";
+	
+	$sql = "SELECT amount from base_amount";
+	$result = $conn->query($sql);
 
+	if ($result->num_rows > 0){
+		while ($row=$result->fetch_assoc()){
+			echo "-amount" . $row["amount"]. "<br>";
+
+		}
+	}else {
+			echo "0";
+	 }
+	
+	 $sql = "INSERT INTO base_amount (amount) VALUES (".$base_amount.")";
+	
+
+
+	/*if (("SELECT amount FROM base_amount") == NULL){
 	$sql = "INSERT INTO base_amount (amount) VALUES (".$base_amount.")";
-
+	} else {
+	$sql = "UPDATE base_amount 
+	SET amount = (".$base_amount.")";
+	}*/
 	if (mysqli_query ($conn, $sql)){
 		echo "saved in db";
 	}else{
 		echo "Errors:" . $sql . "<br>" .	mysqli_error($conn);
 	}
+
 	mysqli_close($conn);
 }
 ?> 

@@ -5,8 +5,6 @@ My App Specifications:
 4)Expected total per month
 5)Actual total per month
 
-
-
 Reference: https://github.com/GarageGames/Torque2D/wiki/Cloning-the-repo-and-working-with-Git#2--cloning-the-repo
 
 STEPS:
@@ -23,3 +21,9 @@ STEPS:
 
 3)DELETE LOCAL BRANCH
 -git branch - d <branch>
+
+4)UPDATING THE DEVELOP BRANCH
+-git pull origin develop
+
+5)TO UPDATE YOUR OWN BRANCH
+-git merge develop
