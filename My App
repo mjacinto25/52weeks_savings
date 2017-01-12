@@ -27,6 +27,56 @@ To start set your base_amount here : textfield
 -[outside row] Overall Bal = Expected - Current
 
 =================================================================================================================
+DATABASE STRUCTURE:
+52weeks_savings
+  users
+    id: integer, primary-key, auto-increment
+    username: string
+    password: string
+    name: string
+  savings
+    id: integer, primary-key, auto-increment
+    user_id: integer
+    base_amount: float
+    limit: integer
+    type: string
+    name: string
+    description: test
+  remmittance
+    id: integer, primary-key, auto-increment
+    savings_id: integer
+    amount: float
+
+DATABASE: savings-app
+TABLES: users, savings, remmittance
+
+https://gyazo.com/33717fc84b5986f59f50139b08c3383f
+https://gyazo.com/36967659d4f6a6995464f0e80edd545d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================================================================================================
 Reference: https://github.com/GarageGames/Torque2D/wiki/Cloning-the-repo-and-working-with-Git#2--cloning-the-repo
 
 STEPS:
