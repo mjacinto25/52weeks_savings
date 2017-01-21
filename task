@@ -1,0 +1,35 @@
+<?php
+  ob_start();
+  include ".env";
+  $env_file = ob_get_contents();
+  ob_end_clean();
+  $env=[];
+  foreach (array_filter(explode(PHP_EOL,$env_file)) as $key => $value) {
+    $var = explode('=',$value,2);
+    $env[$var[0]] = $var[1];
+  }
+
+  if ($argv[0] == 'task') {
+    $task = $argv[1];
+    $mysqli = new mysqli($env['DB_HOST'], $env['DB_USERNAME'], $env['DB_PASSWORD']);
+    if ($mysqli->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }else{
+      switch ($task) {
+        case 'db:create':
+          $sql = "CREATE DATABASE IF NOT EXISTS `$env["DB_DATABASE"]`";
+          if ($mysqli->query($sql) === TRUE) {
+            echo "Database created successfully\n";
+          } else {
+            echo "Error creating database: " . $mysqli->error."\n";
+          }
+
+          break;
+        default:
+          echo "task not found!\n";
+          break;
+      }
+      $mysqli->close();
+    }
+  }
+
