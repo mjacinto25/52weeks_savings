@@ -1,12 +1,82 @@
 My App Specifications:
-1)Set reference amount
-2)Add amount
-3)Select week (automatic)
-4)Expected total per month
-5)Actual total per month
+1)Sign Up Page
+-firstname name
+-last name
+-email (use to send verification message)
+-password
+2)Log In page
+-email
+-password
+-forgot password link
+3)Home
+-Add Savings Plan Record
+*When adding a saving plan set your target
+base_amount ..blah22.. add here the about the savings rule...
+To start set your base_amount here : textfield
+4)Table will display
+-[row]Week
+-[row]display Reference_amount
+-[row]able you to set Remittance_amount w/ (SAVE button)
+-[row]display the current basement
+-[outside row][button] Edit base_amount
+-[outside row][button] Add new record -> modal (set base_amount)
+-[row]display total per month
+-[row]Bal = Total per month - remittance
+-[outside row] Expected Year Total
+-[outside row] Current Overall Total
+-[outside row] Overall Bal = Expected - Current
+
+=================================================================================================================
+DATABASE STRUCTURE:
+52weeks_savings
+  users
+    id: integer, primary-key, auto-increment
+    username: string
+    password: string
+    name: string
+  savings
+    id: integer, primary-key, auto-increment
+    user_id: integer
+    base_amount: float
+    limit: integer
+    type: string
+    name: string
+    description: test
+  remmittance
+    id: integer, primary-key, auto-increment
+    savings_id: integer
+    amount: float
+
+DATABASE: savings-app
+TABLES: users, savings, remmittance
+
+https://gyazo.com/33717fc84b5986f59f50139b08c3383f
+https://gyazo.com/36967659d4f6a6995464f0e80edd545d
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================================================================================================
 Reference: https://github.com/GarageGames/Torque2D/wiki/Cloning-the-repo-and-working-with-Git#2--cloning-the-repo
 
 STEPS:
@@ -23,3 +93,9 @@ STEPS:
 
 3)DELETE LOCAL BRANCH
 -git branch - d <branch>
+
+4)UPDATING THE DEVELOP BRANCH
+-git pull origin develop
+
+5)TO UPDATE YOUR OWN BRANCH
+-git merge develop
