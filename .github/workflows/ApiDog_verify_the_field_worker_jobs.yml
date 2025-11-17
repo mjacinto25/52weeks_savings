@@ -21,4 +21,4 @@ jobs:
       run: npm install -g apidog-cli
 
     - name: Running Test Scenario
-      run: apidog run --access-token "$APIDOG_ACCESS_TOKEN" -t 1542843 -e 5154254 -n 1 -r html,cli
+      run: apidog run --access-token "$APIDOG_ACCESS_TOKEN" -t 1542843 -e 5154252 -n 1 -r html,cli
