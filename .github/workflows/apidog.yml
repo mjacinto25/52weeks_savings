@@ -1,4 +1,4 @@
-name: Automated API Tests
+name: [ApiDog] Verify the Field Worker Jobs
 
 on: [push, pull_request]
 
