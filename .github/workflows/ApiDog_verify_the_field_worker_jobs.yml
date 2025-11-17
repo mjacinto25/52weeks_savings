@@ -1,4 +1,4 @@
-name: [ApiDog] Verify the Field Worker Jobs
+name: ApiDog - Verify the Field Worker Jobs
 
 on: [push, pull_request]
 
